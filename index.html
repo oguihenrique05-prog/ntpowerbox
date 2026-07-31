@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NT Power Box - Mais Potência, Menos Consumo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#0052FF',
+                            lightblue: '#337AFF',
+                            dark: '#0A0E17',
+                            card: '#131A2A',
+                            accent: '#00F0FF'
+                        }
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                        'hero-pattern': "url('bg-hero.jpg')",
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for a sleek look */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0A0E17;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #337AFF;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0052FF;
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+        }
+        
+        .pulse-btn {
+            animation: pulse-shadow 2s infinite;
+        }
+        
+        @keyframes pulse-shadow {
+            0% { box-shadow: 0 0 0 0 rgba(0, 82, 255, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 82, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 82, 255, 0); }
+        }
+
+        .pulse-whatsapp {
+            animation: pulse-whatsapp-shadow 2s infinite;
+        }
+        
+        @keyframes pulse-whatsapp-shadow {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        
+        /* Accordion transition */
+        .faq-answer {
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            max-height: 0;
+            overflow: hidden;
+        }
+        .faq-answer.open {
+            max-height: 500px; /* Arbitrary large number */
+            padding-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-white font-sans antialiased overflow-x-hidden">
+
+    <!-- HERO SECTION -->
+    <header class="relative min-h-[90vh] flex items-center pt-8 pb-16 overflow-hidden">
+        <!-- Background Overlay -->
+        <div class="absolute inset-0 bg-hero-pattern bg-cover bg-center opacity-30 mix-blend-overlay"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-dark/50 via-brand-dark/80 to-brand-dark"></div>
+        <div class="absolute inset-0 bg-gradient-radial from-brand-blue/10 to-transparent"></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <!-- Top Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-blue/20 border border-brand-blue/50 text-brand-accent text-sm font-semibold tracking-wide mb-8 uppercase">
+                    <i class="fas fa-bolt"></i>
+                    Para motoristas que exigem performance sem riscos
+                </div>
+
+                <!-- Headline -->
+                <h1 class="text-4xl md:text-6xl font-black leading-tight mb-6 tracking-tight">
+                    Aumente a Potência e Reduza o Consumo em <span class="text-brand-accent glow-text">4 Segundos</span>.
+                </h1>
+                
+                <!-- Sub-headline -->
+                <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
+                    Sem reprogramar a central, sem cortar fios. O microprocessador <strong class="text-white">NT Power Box (Versão 2026)</strong> descarboniza seu motor e otimiza a queima, mantendo a originalidade absoluta do seu veículo.
+                </p>
+
+                <!-- Primary CTA -->
+                <div class="flex flex-col items-center gap-4">
+                    <a href="#oferta" class="pulse-btn w-full md:w-auto bg-brand-blue hover:bg-brand-lightblue text-white text-lg md:text-xl font-bold py-5 px-10 rounded-lg shadow-[0_0_20px_rgba(0,82,255,0.5)] transition-all transform hover:-translate-y-1 block text-center uppercase tracking-wide">
+                        Quero Mais Potência e Economia Agora
+                    </a>
+                    
+                    <!-- Trust Badges -->
+                    <div class="flex flex-wrap justify-center gap-6 mt-6 text-sm text-gray-400 font-medium">
+                        <div class="flex items-center gap-2"><i class="fas fa-plug text-brand-accent"></i> Instalação Plug & Play</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-shield-alt text-brand-accent"></i> Não altera a ECU</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-infinity text-brand-accent"></i> Garantia Infinita</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product Mockup -->
+            <div class="mt-16 text-center">
+                <img src="mockup-produto.png" alt="NT Power Box" class="mx-auto rounded-xl border border-brand-blue/30 shadow-2xl shadow-brand-blue/20 max-w-full h-auto">
+            </div>
+        </div>
+    </header>
+
+    <!-- PROBLEM SECTION (O INIMIGO SILENCIOSO) -->
+    <section class="py-24 bg-brand-dark relative border-t border-white/5">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-black mb-6">O seu motor está <span class="text-red-500">"amarrado"</span> e queimando o seu dinheiro.</h2>
+                <div class="w-24 h-1 bg-brand-blue mx-auto rounded"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-lg text-gray-300 leading-relaxed">
+                    <p>
+                        A queima incompleta de combustível (especialmente com as misturas adulteradas de hoje) gera um <strong>acúmulo agressivo de carvão</strong> dentro do seu motor.
+                    </p>
+                    <p>
+                        Essa carbonização cria atrito interno. O resultado? Você pisa no acelerador e o carro simplesmente não responde como deveria.
+                    </p>
+                    <div class="bg-brand-card p-6 rounded-lg border border-red-500/20 shadow-inner">
+                        <p class="text-white font-semibold flex items-start gap-3">
+                            <i class="fas fa-exclamation-triangle text-red-500 mt-1"></i>
+                            O consumo vai nas alturas, seu óleo fica escuro e contaminado rapidamente, destruindo a vida útil do bloco. O problema não é o seu carro. É a queima ineficiente.
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <img src="comparativo-motor.jpg" alt="Motor com problemas" class="rounded-xl shadow-2xl max-w-full h-auto border border-white/10">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION SECTION (MECANISMO ÚNICO) -->
+    <section class="py-24 bg-brand-card relative border-t border-white/5">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-5xl font-black mb-6">A Engenharia por trás do NT Power Box: <span class="text-brand-accent">100% de Aproveitamento</span></h2>
+                <p class="text-xl text-gray-400">Não é mágica. É tecnologia em microprocessamento.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-brand-dark p-8 rounded-xl border border-white/5 hover:border-brand-blue/50 transition-colors group">
+                    <div class="w-16 h-16 bg-brand-blue/10 rounded-lg flex items-center justify-center text-brand-accent text-3xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-white">Resposta Imediata</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">O circuito atua no sistema elétrico, forçando a queima total do combustível. Em exatos 4 segundos, a resposta do pedal muda drasticamente.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-brand-dark p-8 rounded-xl border border-white/5 hover:border-brand-blue/50 transition-colors group">
+                    <div class="w-16 h-16 bg-brand-blue/10 rounded-lg flex items-center justify-center text-brand-accent text-3xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-white">Descarbonização Total</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Ao queimar 100% do combustível na câmara, não sobra resíduo. Em cerca de 2 meses, seu motor se limpa de dentro para fora sozinho.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-brand-dark p-8 rounded-xl border border-white/5 hover:border-brand-blue/50 transition-colors group">
+                    <div class="w-16 h-16 bg-brand-blue/10 rounded-lg flex items-center justify-center text-brand-accent text-3xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-oil-can"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-white">Proteção Extrema do Óleo</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Sem combustível descendo para o cárter, seu óleo não vira "carvão". Mantém a viscosidade ideal até o final da vida útil (5.000km ou 10.000km).</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-brand-dark p-8 rounded-xl border border-white/5 hover:border-brand-blue/50 transition-colors group">
+                    <div class="w-16 h-16 bg-brand-blue/10 rounded-lg flex items-center justify-center text-brand-accent text-3xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-car-side"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-white">Zero Alteração Estrutural</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Não mexe na vazão, não altera entrada de ar e não reprograma o módulo. Seu carro continua com os parâmetros originais de fábrica.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TANGIBILITY SECTION (DESAFIO DO ESCAPAMENTO) -->
+    <section class="py-24 bg-brand-dark relative border-t border-white/5 overflow-hidden">
+        <div class="absolute -left-[20%] top-1/2 w-1/2 h-1/2 bg-brand-blue/20 blur-[120px] rounded-full mix-blend-screen pointer-events-none"></div>
+        
+        <div class="container mx-auto px-4 max-w-5xl relative z-10">
+            <div class="bg-gradient-to-r from-brand-card to-brand-dark p-1 rounded-2xl border border-white/10 shadow-2xl">
+                <div class="bg-brand-card rounded-xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2">
+                        <h2 class="text-3xl md:text-4xl font-black mb-6">A Prova Definitiva:<br>O Teste do Escapamento.</h2>
+                        <div class="w-16 h-1 bg-brand-accent mb-6 rounded"></div>
+                        <p class="text-gray-300 mb-6 text-lg">
+                            Não acredite apenas nas nossas palavras. Vá até o seu carro agora e passe o dedo por dentro do escapamento. Se sair sujo de fuligem preta, seu motor está desperdiçando combustível.
+                        </p>
+                        <p class="text-white font-semibold text-lg border-l-4 border-brand-blue pl-4 py-2">
+                            Após usar o NT Power Box e rodar até a descarbonização completa, faça o teste de novo. Seu escapamento estará limpo. A energia estará nas rodas, não na fumaça.
+                        </p>
+                    </div>
+                    <div class="md:w-1/2 w-full">
+                        <img src="teste-escapamento.jpg" alt="Teste do Escapamento" class="rounded-lg shadow-lg w-full object-cover border border-white/5">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL PROOF (DEPOIMENTOS) -->
+    <section class="py-24 bg-brand-card relative border-t border-white/5">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-black mb-4">A diferença real no asfalto e na bomba.</h2>
+                <p class="text-gray-400 text-xl">Quem instalou, não dirige mais sem.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Testimonial 1 -->
+                <div class="bg-brand-dark p-8 rounded-xl border border-white/5 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-yellow-500 mb-4 text-sm gap-1">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 italic mb-6">"Meu Ford Focus 1.8 pulou de 13.5 para 17.9Km/l na estrada. O torque dele ficou muito melhor. O próximo teste será na troca de óleo. Recomendo a todos."</p>
+                    </div>
+                    <div>
+                        <p class="font-bold text-white">Desconhecido</p>
+                        <p class="text-sm text-gray-500">Dono de Ford Focus 1.8</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-brand-dark p-8 rounded-xl border border-white/5 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-yellow-500 mb-4 text-sm gap-1">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 italic mb-6">"Me chamo Adalberto e coloquei na minha Ecosport 1.6. Mudou de 10.5 para 14.9 km com um litro. Ela voltou a ficar como era originalmente... adorei."</p>
+                    </div>
+                    <div>
+                        <p class="font-bold text-white">Adalberto Sousa</p>
+                        <p class="text-sm text-gray-500">Dono de Ecosport 1.6</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-brand-dark p-8 rounded-xl border border-white/5 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-yellow-500 mb-4 text-sm gap-1">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 italic mb-6">"O torque do motor fire 1.4 ficou muito bom, respostas bem rápidas, foi um ótimo investimento......estou totalmente satisfeito."</p>
+                    </div>
+                    <div>
+                        <p class="font-bold text-white">Rizzieri</p>
+                        <p class="text-sm text-gray-500">Motor Fire 1.4</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OFFER & GUARANTEE SECTION -->
+    <section id="oferta" class="py-24 bg-brand-dark relative border-t border-white/5">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <!-- Guarantee Box -->
+            <div class="bg-gradient-to-br from-brand-card to-[#0d1320] border-2 border-brand-accent/30 rounded-2xl p-8 md:p-12 text-center mb-16 shadow-[0_0_40px_rgba(0,240,255,0.1)] relative overflow-hidden">
+                <div class="absolute -top-10 -right-10 text-brand-accent/10">
+                    <i class="fas fa-shield-alt text-9xl"></i>
+                </div>
+                
+                <div class="w-20 h-20 bg-brand-accent/10 rounded-full flex items-center justify-center mx-auto mb-6 relative z-10 border border-brand-accent/20">
+                    <i class="fas fa-infinity text-3xl text-brand-accent"></i>
+                </div>
+                
+                <h3 class="text-3xl font-black mb-4 relative z-10 text-white">O Risco é Zero. Garantia Infinita.</h3>
+                <p class="text-gray-300 text-lg max-w-2xl mx-auto relative z-10">
+                    Nós confiamos tanto na nanotecnologia do NT Power Box que oferecemos algo inédito: <strong>Garantia Infinita</strong>. Se o aparelho apresentar falha de fabricação, nós cobrimos. Você foca apenas em aproveitar a potência.
+                </p>
+            </div>
+
+            <!-- WhatsApp Call to Action Box -->
+            <div class="bg-brand-card rounded-2xl border border-[#25D366]/40 p-8 text-center shadow-[0_0_30px_rgba(37,211,102,0.15)] relative">
+                <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#25D366] text-white font-bold px-6 py-2 rounded-full text-sm uppercase tracking-wider shadow-lg flex items-center gap-2 whitespace-nowrap">
+                    <i class="fab fa-whatsapp text-lg"></i> Atendimento Exclusivo
+                </div>
+                
+                <h3 class="text-2xl font-bold mt-6 mb-2">NT Power Box - Versão 2026</h3>
+                <p class="text-gray-400 mb-8">Fale com nossos especialistas agora mesmo e garanta a descarbonização, potência e economia do seu motor.</p>
+                
+                <div class="mb-8 p-5 bg-brand-dark rounded-xl border border-white/5 inline-block text-left">
+                    <p class="text-gray-300 font-semibold mb-3 border-b border-white/10 pb-2">O que você recebe no atendimento:</p>
+                    <ul class="text-sm text-gray-400 space-y-3">
+                        <li class="flex items-center gap-3"><div class="bg-[#25D366]/20 p-1.5 rounded-full"><i class="fas fa-check text-[#25D366] text-xs"></i></div> Análise exata de compatibilidade para o seu modelo</li>
+                        <li class="flex items-center gap-3"><div class="bg-[#25D366]/20 p-1.5 rounded-full"><i class="fas fa-check text-[#25D366] text-xs"></i></div> Condições exclusivas de pagamento direto com a fábrica</li>
+                        <li class="flex items-center gap-3"><div class="bg-[#25D366]/20 p-1.5 rounded-full"><i class="fas fa-check text-[#25D366] text-xs"></i></div> Orientação de instalação passo a passo</li>
+                    </ul>
+                </div>
+
+                <a href="https://wa.me/5514996264100?text=Ol%C3%A1%2C%20estou%20na%20p%C3%A1gina%20do%20NT%20Power%20Box%20e%20gostaria%20de%20falar%20com%20um%20especialista." target="_blank" rel="noopener noreferrer" class="pulse-whatsapp w-full max-w-lg mx-auto bg-[#25D366] hover:bg-[#128C7E] text-white text-xl font-bold py-6 px-8 rounded-xl transition-all transform hover:-translate-y-1 uppercase tracking-wider flex flex-col items-center justify-center gap-2">
+                    <div class="flex items-center gap-3">
+                        <i class="fab fa-whatsapp text-3xl"></i>
+                        <span>Chamar no WhatsApp</span>
+                    </div>
+                    <span class="text-sm font-normal text-white/90 normal-case tracking-normal">Resposta em poucos minutos</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="py-24 bg-brand-card relative border-t border-white/5">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <h2 class="text-3xl font-black mb-12 text-center">Ainda tem dúvidas?</h2>
+            
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="border border-white/10 rounded-lg bg-brand-dark overflow-hidden">
+                    <button class="faq-btn w-full text-left p-6 font-semibold flex justify-between items-center text-lg focus:outline-none">
+                        Funciona em carro a Álcool?
+                        <i class="fas fa-chevron-down text-brand-blue transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 text-gray-400">
+                        Sim! Especialmente com álcool hidratado. Após a descarbonização completa do motor (cerca de 2 meses), a economia com álcool pode chegar entre 25% a 30%.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="border border-white/10 rounded-lg bg-brand-dark overflow-hidden">
+                    <button class="faq-btn w-full text-left p-6 font-semibold flex justify-between items-center text-lg focus:outline-none">
+                        Vou perder a garantia de fábrica do meu carro?
+                        <i class="fas fa-chevron-down text-brand-blue transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 text-gray-400">
+                        Não. O NT Power Box é totalmente autônomo. Ele não reprograma o módulo de injeção (ECU), não mexe na vazão de combustível e não requer corte de fios. Seu carro continua original.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="border border-white/10 rounded-lg bg-brand-dark overflow-hidden">
+                    <button class="faq-btn w-full text-left p-6 font-semibold flex justify-between items-center text-lg focus:outline-none">
+                        Vou precisar de um mecânico para instalar?
+                        <i class="fas fa-chevron-down text-brand-blue transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 text-gray-400">
+                        O sistema possui arquitetura amigável (2 fios). Muitos clientes instalam sozinhos, mas recomendamos levar a um autoelétrico ou mecânico de confiança apenas para garantir o posicionamento correto, o que leva minutos.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#05080f] py-8 border-t border-white/5 text-center text-gray-500 text-sm">
+        <div class="container mx-auto px-4">
+            <p class="mb-2">© 2026 Neo Tecnologia Ltda. Todos os direitos reservados.</p>
+            <p>CNPJ: 04.816.372/0001-41</p>
+            <div class="mt-4 flex justify-center space-x-4">
+                <a href="#" class="hover:text-brand-blue transition-colors">Termos de Uso</a>
+                <a href="#" class="hover:text-brand-blue transition-colors">Política de Privacidade</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // FAQ Accordion Logic
+            const faqButtons = document.querySelectorAll('.faq-btn');
+            
+            faqButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const answer = button.nextElementSibling;
+                    const icon = button.querySelector('i');
+                    
+                    // Close all others
+                    document.querySelectorAll('.faq-answer').forEach(ans => {
+                        if (ans !== answer && ans.classList.contains('open')) {
+                            ans.classList.remove('open');
+                            ans.previousElementSibling.querySelector('i').style.transform = 'rotate(0deg)';
+                        }
+                    });
+
+                    // Toggle current
+                    if (answer.classList.contains('open')) {
+                        answer.classList.remove('open');
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        answer.classList.add('open');
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
